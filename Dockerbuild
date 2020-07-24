@@ -1,0 +1,17 @@
+from node
+
+# copy you dependency mapping file 
+COPY package.json  ./
+
+# copy your index.js to the container 
+COPY index.js   ./ 
+
+# it going to fetch all the dependencies npm ---> 
+# install the dependencies 
+RUN  npm install
+
+# the container exposes a port 3000 
+EXPOSE  3000 
+
+# start the the application 
+CMD ["node" , "index.js"]
